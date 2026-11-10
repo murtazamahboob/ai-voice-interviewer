@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-voice-interviewer"
+version = "1.0.0"
+description = "AI Voice Interviewer — offline mock job interviews by voice: structured questions, transparent rubric scoring, adaptive follow-ups and a hire recommendation. No microphone, network or API key needed."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Murtaza Mahboob" }]
+keywords = [
+    "voice-interviewer",
+    "mock-interview",
+    "speech-to-text",
+    "text-to-speech",
+    "interview-preparation",
+    "offline-ai",
+    "conversational-ai",
+    "python",
+    "numpy",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy==1.26.4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0"]
+
+[project.scripts]
+interviewer = "interviewer.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
